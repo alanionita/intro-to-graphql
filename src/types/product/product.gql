@@ -43,3 +43,8 @@ input UpdateProductInput {
   bikeType: BikeType
   range: String
 }
+
+extend type Query {
+  product(id: String!): Product
+  products(limit: Int = 10) : [Product]
+}
