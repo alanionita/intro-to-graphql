@@ -10,3 +10,8 @@ enum BikeType {
   ELECTRIC
   BEACH
 }
+
+type Product {
+  name: String!
+}
+
