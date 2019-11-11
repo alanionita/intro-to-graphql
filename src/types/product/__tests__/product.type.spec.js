@@ -80,6 +80,7 @@ describe('Product schema', () => {
         name: 'String',
         price: 'String',
         image: 'String',
+        type: 'ProductType!',
         description: 'String',
         liquidCooled: 'Boolean',
         bikeType: 'BikeType',
