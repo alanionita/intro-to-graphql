@@ -45,6 +45,10 @@ input UpdateProductInput {
 }
 
 extend type Query {
-  product(id: String!): Product
-  products(limit: Int = 10) : [Product]
+  product(id: ID!): Product!
+  products: [Product]!
+}
+
+extend type Mutation {
+  newProduct(input: NewProductInput!): Product!
 }
