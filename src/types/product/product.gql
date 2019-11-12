@@ -37,7 +37,7 @@ input UpdateProductInput {
   name: String
   price: String
   image: String
-  type: ProductType!
+  type: String
   description: String
   liquidCooled: Boolean
   bikeType: BikeType
@@ -51,4 +51,5 @@ extend type Query {
 
 extend type Mutation {
   newProduct(input: NewProductInput!): Product!
+  updateProduct(id: ID!, input: UpdateProductInput!): Product!
 }
