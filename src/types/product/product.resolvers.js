@@ -13,11 +13,16 @@ const products = () => Product.find({}).exec()
 const product = (_, args) => Product.findById(args.id).exec()
 const newProduct = (_, args, context) =>
   Product.create({ ...args.input, createdBy: context.user._id })
+const updateProduct = (_, args, context) =>
+  Product.findByIdAndUpdate(args.id, args.input, { new: true })
+    .lean()
+    .exec()
 
 export default {
   Query: { products, product },
   Mutation: {
-    newProduct
+    newProduct,
+    updateProduct
   },
   Product: {
     __resolveType(product) {}
