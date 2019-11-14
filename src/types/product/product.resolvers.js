@@ -30,6 +30,11 @@ export default {
     removeProduct
   },
   Product: {
-    __resolveType(product) {}
+    __resolveType(product) {},
+    createdBy(product) {
+      return User.findById(product.createdBy)
+        .lean()
+        .exec()
+    }
   }
 }
